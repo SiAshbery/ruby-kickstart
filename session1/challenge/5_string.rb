@@ -5,4 +5,12 @@
 # add_more_ruby("Sad times are ahead!")         # => "Happy times are ahead!"
 
 def add_more_ruby(string)
+    string.gsub("sad", "happy").gsub("Sad","Happy")
+    
 end
+
+add_more_ruby("The clowns were sad.")       
+add_more_ruby("The sad dad said sad stuff.") 
+add_more_ruby("Sad times are ahead!") 
+
+#'hello'.gsub(/[eo]/, 'e' => 3, 'o' => '*')    #=> "h3ll*"
