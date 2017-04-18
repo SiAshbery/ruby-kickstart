@@ -18,7 +18,25 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+class String def is_integer?
+    self.to_i.to_s == self
+    end
+end
+
 def hi_hi_goodbye
+    puts "Enter a number"
+    number = gets.chomp
+    
+    while number.is_integer?
+        number.to_i.times do
+            puts "hi"
+        end
+            puts "Enter a number"
+            number = gets.chomp
+            break if number.downcase == "bye"
+    end
+   puts "goodbye"
+    
   # your code here
 end
 
