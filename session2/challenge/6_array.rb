@@ -14,3 +14,19 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+class Integer
+    def is_prime?
+        return false if self <= 1    
+        Math.sqrt(self).to_i.downto(2).each {|i| return false if self % i == 0}
+        true
+    end
+end
+
+def prime_chars?(strings)
+    strings.map!{|x| x.length}
+    if strings.inject{|x,y| x + y}.to_i.is_prime?
+        return true
+    else
+        return false
+    end 
+end
