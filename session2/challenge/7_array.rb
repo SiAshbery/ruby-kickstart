@@ -8,3 +8,17 @@
 # alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+def alternate_words(string)
+  # this will get better when we learn regular expressions :)
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+    string = string.gsub(char, ' ')
+end
+
+    words = string.split
+    every_other = {}
+    words.each_with_index{|item, index| every_other[index] = item}
+    words = []
+    every_other.delete_if{|key, value| key.odd?}.each{|key, value| words << value}
+    words
+  end
+
