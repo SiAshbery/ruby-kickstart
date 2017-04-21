@@ -20,7 +20,7 @@ def grade(num_books, reads_books)
         return "B"
     elsif num_books.between?(10, 20) && reads_books == true
         return "B"
-    elsif num_books.between?(10,20) && reads_books == false
+    elsif num_books.between?(10, 20) && reads_books == false
         return "C"
     else
         puts "Error"
